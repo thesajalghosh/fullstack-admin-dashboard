@@ -15,7 +15,8 @@ import salseRoutes from "./routes/salse.js"
 import User from './models/User.js'
 import Product from './models/product.js'
 import ProductStat from './models/productStat.js'
-import {dataUser, dataProduct, dataProductStat} from "./data/index.js"
+import  Transaction  from './models/Transaction.js'
+import {dataUser, dataProduct, dataProductStat, dataTransaction} from "./data/index.js"
 
 
 dotenv.config();
@@ -47,6 +48,8 @@ mongoose.connect(process.env.MONGO_URL, {
         // ONLY ADD DATA ONE TIME
         // Product.insertMany(dataProduct);
          // ProductStat.insertMany(dataProductStat)
+        //  Transaction.insertMany(dataTransaction);
+
         // User.insertMany(dataUser)
     })
 }).catch((error) => {

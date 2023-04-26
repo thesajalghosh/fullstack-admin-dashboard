@@ -1,0 +1,11 @@
+
+
+.customer__page{
+    background-color: rgb(41, 41, 100);
+    padding: 17px;
+    height: 629px;
+    overflow: auto;
+}
+.customar__table{
+    margin-top: 20px;
+}

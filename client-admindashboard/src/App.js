@@ -4,9 +4,9 @@ import './App.css';
 import Dashboard from "./scenes/dashboard/Dashboard"
 import Layout from "./scenes/layout/Layout.jsx"
 import Products from "./scenes/products/Products"
-import Transactions from 'scenes/transactions/Transactions';
-import Geography from 'scenes/geography/Geography';
-import Customers from 'scenes/customer/Customers';
+import Transactions from './scenes/transactions/Transactions';
+import Geography from './scenes/geography/Geography';
+import Customers from './scenes/customer/Customers';
 
 function App() {
   return (
