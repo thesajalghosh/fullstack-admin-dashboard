@@ -49,7 +49,6 @@ mongoose.connect(process.env.MONGO_URL, {
         // Product.insertMany(dataProduct);
          // ProductStat.insertMany(dataProductStat)
         //  Transaction.insertMany(dataTransaction);
-
         // User.insertMany(dataUser)
     })
 }).catch((error) => {

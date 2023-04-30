@@ -3,15 +3,18 @@ import { useGetTransactionsQuery } from 'state/api'
 import Header from 'components/header/Header'
 import "./Transactions.css"
 import { DataGrid } from '@mui/x-data-grid'
+import DataGridCustomToolbar from "components/DataGridCustomToolbar/DataGridCustomToolbar";
+
 
 
 
 const Transactions = () => {
 
   const [page, setpage] = useState(0);
-  const [pageSize, setPageSize] = useState(20);
+  const [pageSize, setPageSize] = useState(10);
   const [sort, setsort] = useState({});
-  const [search, setsearch] = useState("")
+  const [search, setSearch] = useState("");
+  const [searchInput, setSearchInput] = useState("");
 
   const { data, isLoading } = useGetTransactionsQuery({
     page,
@@ -28,7 +31,7 @@ const Transactions = () => {
     { field: "createdAt", headerName: "CreatedAt", flex: 1 },
     { field: "products", headerName: "# of Products", flex: 0.4, sortable: false, renderCell: (params) => params.value.length },
     {
-      field: "cost", headerName: "Cost", flex: 0.8,
+      field: "cost", headerName: "Cost", flex: 0.5,
       renderCell: (params) => `$${Number(params.value).toFixed(2)}`
     },
 
@@ -53,6 +56,8 @@ const Transactions = () => {
           onPageChange={(newPage) => setpage(newPage)}
           onPageSizeChange = {(newPageSize) => setPageSize(newPageSize)}
           onSortModelChange = {(newSortMode) => setsort(...newSortMode)}
+          components= {{Toolbar: DataGridCustomToolbar}}
+          componentsProps={{toolbar: {searchInput, setSearchInput, setSearch},}}
 
           />
       </div>

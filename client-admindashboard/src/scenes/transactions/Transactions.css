@@ -1,3 +1,13 @@
-.transactions{
+
+.transactions
+{
     background-color: rgb(41, 41, 100);
+    padding: 17px;
+    height: 629px;
+    overflow: auto;
+    color: white;
+}
+
+.transactions__table{
+    margin-top: 20px;
 }
